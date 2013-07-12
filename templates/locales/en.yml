@@ -611,6 +611,8 @@ en:
         network_invalid: |-
           The network type '%{type}' is not valid. Please use
           'hostonly' or 'bridged'.
+        network_ip_required: |-
+          Host only networks require an IP as an argument.
         network_ip_invalid: |-
           The host only network IP '%{ip}' is invalid.
         network_ip_ends_one: |-
@@ -626,7 +628,11 @@ en:
           Using NFS shared folders requires a host to be specified
           using `config.vagrant.host`.
         network_ip_required: |-
+<<<<<<< HEAD
           Private & Hostonly network(s) require an IP as an argument.
+=======
+          An IP is required for a private network.
+>>>>>>> parent of 7be88e0... Cleanup en.yml and fix-up checking of :hostonly network options
         network_fp_host_not_unique: |-
           Forwarded port '%{host}' (host port) is declared multiple times
         network_fp_requires_ports: |-
