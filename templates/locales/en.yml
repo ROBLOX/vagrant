@@ -629,10 +629,14 @@ en:
           using `config.vagrant.host`.
         network_ip_required: |-
 <<<<<<< HEAD
+<<<<<<< HEAD
           Private & Hostonly network(s) require an IP as an argument.
 =======
           An IP is required for a private network.
 >>>>>>> parent of 7be88e0... Cleanup en.yml and fix-up checking of :hostonly network options
+=======
+          Private network & Hostonly networks require an IP as an argument.
+>>>>>>> parent of c15f037... Fix-up network_ip_required error message to be valid for both private & hostonly networks
         network_fp_host_not_unique: |-
           Forwarded port '%{host}' (host port) is declared multiple times
         network_fp_requires_ports: |-
