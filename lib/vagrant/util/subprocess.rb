@@ -27,7 +27,7 @@ module Vagrant
       def initialize(*command)
         progname = command[0]
         @options = command.last.is_a?(Hash) ? command.pop : {}
-        @command = command
+        @command = command.dup
         @command[0] = Which.which(@command[0]) if !File.file?(@command[0])
         if !@command[0]
           raise Errors::CommandUnavailableWindows, file: progname if Platform.windows?

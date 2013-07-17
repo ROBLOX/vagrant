@@ -1,10 +1,12 @@
-## 1.2.4 (unreleased)
+## 1.2.4 (July 16, 2013)
 
 FEATURES:
 
   - Chef solo and client provisioning now support a `custom_config_path`
     setting that accepts a path to a Ruby file to load as part of Chef
     configuration, allowing you to override any setting available. [GH-876]
+  - CFEngine provisioner: you can now specify the package name to install,
+    so CFEngine enterprise is supported. [GH-1920]
 
 IMPROVEMENTS:
 
@@ -15,9 +17,12 @@ IMPROVEMENTS:
   - Forwarded ports can specify a host IP and guest IP to bind to. [GH-1121]
   - You can now set the "ip" of a private network that uses DHCP. This will
     change the subnet and such that the DHCP server uses.
+  - Add `file_cache_path` support for chef_solo. [GH-1897]
 
 BUG FIXES:
 
+  - VBoxManage or any other executable missing from PATH properly
+    reported. Regression from 1.2.2. [GH-1928]
   - Boxes downloaded as part of `vagrant up` are now done so _prior_ to
     config validation. This allows Vagrantfiles to references files that
     may be in the box itself. [GH-1061]
@@ -30,6 +35,11 @@ BUG FIXES:
   - SSH channel is closed after the exit status is received, potentially
     eliminating any SSH hangs. [GH-603]
   - Fix regression where VirtualBox detection wasn't working anymore. [GH-1918]
+  - NFS shared folders with single quotes in their name now work properly. [GH-1166]
+  - Debian/Ubuntu request DHCP renewal when hostname changes, which will
+    fix issues with FQDN detecting. [GH-1929]
+  - SSH adds the "DSAAuthentication=yes" option in case that is disabled
+    on the user's system. [GH-1900]
 
 ## 1.2.3 (July 9, 2013)
 
